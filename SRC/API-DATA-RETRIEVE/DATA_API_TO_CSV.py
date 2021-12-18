@@ -22,7 +22,7 @@ def movies_api_to_json():
                     index += 1
 
                     with open('movies.json', 'w') as f:
-                        data = json.dump(movies, f, indent=4)
+                        json.dump(movies, f, indent=4)
                 except Exception as e:
                     print("Exeception occured in inner loop: {}".format(e))
                     continue
@@ -33,40 +33,41 @@ def movies_api_to_json():
 
 
 def credits_api_to_json():
-    url = "https://api.themoviedb.org/3/discover/movie"
     actors = {}
     directors = {}
 
-    # movies_json_file = open('movies.json')
-    # movies_data = json.load(movies_json_file)
+    movies_json_file = open('movies.json')
+    movies_data = json.load(movies_json_file)
+    for i in range(1, 10000):       # 10000 is the MAX number of movies
+        if str(i) in movies_data:
+            movie_index = movies_data[str(i)]['id']
+            movie_url = f"https://api.themoviedb.org/3/movie/{str(movie_index)}/credits"
+            headers = {'api_key': '6f5ab34a391be0d0e270142cbcf12323'}
+            try:
+                req = requests.get(movie_url, headers)
+                cast_data = req.json()
 
-    movies_data = ['580489', '634649', '566525']
+                actors_current_movie = []
+                directors_current_movie = []
+                for entry in cast_data["cast"]:
+                    if entry["known_for_department"] == "Acting":
+                        actors_current_movie.append({'id': entry['id'], 'name':entry['name'], 'popularity': entry['popularity']})
 
-    for index, movie_data in movies_data:
-        movie_index = movie_data['id']
-        movie_url = f"https://api.themoviedb.org/3/movie/{str(movie_index)}/credits"
-        headers = {'api_key': '6f5ab34a391be0d0e270142cbcf12323'}
-        req = requests.get(movie_url, headers)
-        cast_data = req.json()
-        print(cast_data)
-        actors_current_movie = []
-        directors_current_movie = []
-        for entry in cast_data["cast"]:
-            if entry["known_for_department"] == "Acting":
-                actors_current_movie.append({'id': entry['id'], 'name':entry['name'], 'popularity': entry['popularity']})
+                for entry in cast_data["crew"]:
+                    if entry["known_for_department"] == "Directing" and entry["job"] == "Director":
+                        directors_current_movie.append({'id': entry['id'], 'name': entry['name']})
 
-        for entry in cast_data["crew"]:
-            if entry["known_for_department"] == "Directing" and entry["job"] == "Director":
-                directors_current_movie.append({'id': entry['id'], 'name': entry['name']})
+                actors[str(movie_index)] = actors_current_movie
+                directors[str(movie_index)] = directors_current_movie
 
-        actors[str(movie_index)] = actors_current_movie
-        directors[str(movie_index)] = directors_current_movie
+            except Exception as e:
+                print("Exeception occured: {}".format(e))
+                continue
 
-        with open('actors.json', 'w') as f:
-            data = json.dump(actors, f, indent=4)
+    with open('actors.json', 'w') as f:
+        json.dump(actors, f, indent=4)
 
-        with open('directors.json', 'w') as f:
-            data = json.dump(directors, f, indent=4)
+    with open('directors.json', 'w') as f:
+        json.dump(directors, f, indent=4)
 
-
-credits_api_to_json()
+# credits_api_to_json()
