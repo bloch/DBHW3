@@ -69,3 +69,24 @@ def build_query_6(actor_name , director_name):
                     "order by M.popularity desc " \
                     "limit(3) "
     return query
+
+""" list of movie titles which <director_name> has directed them ,
+    in genre <genre> in range <start_date> - <end_date>
+    and also the actors with the highest po 
+"""
+def build_query_7(start_date , end_date, director_name, genre_name):
+    nested_query_1 = "select M2.movieID as movie_id " \
+                    "from Movies as M2 , MovieDirector as MD2 , MovieGenres as MG2 " \
+                    "where M2.movieID = MD2.movieID AND MD2.directorName = %s AND MD2.movieID = MG2.movieID " \
+                    "AND MG2.genreName = %s AND M2.releaseDate BETWEEN %s AND %s "
+
+    # nested_query_2 = "select MA2.actorID as actor_id " \
+    #                  "from Movies as M3 , MoviesActors as MA2 " \
+    #                  "where M3.movieID = MA2.movieID " \
+    #                  "order by M3.popularity "
+
+    query = "select M1.title " \
+            "from MoviesActors as MA1 , Movies as M1 , " + nested_query_1 + " as Query1 , Actors as A1 " \
+            "where MA1.movieID = M1.movieID AND MA1.movieID = Query1.movieID AND A1.actorID = MA1.actorID " \
+            "order by A1.popularity " \
+            "limit 5"
