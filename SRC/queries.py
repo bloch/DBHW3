@@ -37,6 +37,15 @@ def build_query_3(user_runtime , genre):
 
     return query
 
+
+def build_query_4():
+    query = "select M.title " \
+            "from Movies as M" \
+            "where INSTR(M.overview , %s) " \
+            "order by M.popularity desc " \
+            "limit 5"
+    return query
+
 def build_query_5(start_date , end_date):
     nested_query = "select MD2.directorID " \
                    "from Movies as M2 , MovieDirector as MD2 " \
