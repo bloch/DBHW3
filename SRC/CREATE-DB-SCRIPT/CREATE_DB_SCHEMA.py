@@ -6,6 +6,7 @@ def create_Movies_table(connectionObject):
     cursorObject = connectionObject.cursor()
     cursorObject.execute(sqlQuery)
     connectionObject.commit()
+    cursorObject.close()
 
 
 def create_MovieGenres_table(connectionObject):
@@ -13,6 +14,7 @@ def create_MovieGenres_table(connectionObject):
     cursorObject = connectionObject.cursor()
     cursorObject.execute(sqlQuery)
     connectionObject.commit()
+    cursorObject.close()
 
 
 def create_Genres_table(connectionObject):
@@ -20,6 +22,7 @@ def create_Genres_table(connectionObject):
     cursorObject = connectionObject.cursor()
     cursorObject.execute(sqlQuery)
     connectionObject.commit()
+    cursorObject.close()
 
 
 def create_Actors_table(connectionObject):
@@ -27,6 +30,7 @@ def create_Actors_table(connectionObject):
     cursorObject = connectionObject.cursor()
     cursorObject.execute(sqlQuery)
     connectionObject.commit()
+    cursorObject.close()
 
 
 def create_MoviesActors_table(connectionObject):
@@ -34,6 +38,7 @@ def create_MoviesActors_table(connectionObject):
     cursorObject = connectionObject.cursor()
     cursorObject.execute(sqlQuery)
     connectionObject.commit()
+    cursorObject.close()
 
 
 def create_Directors_table(connectionObject):
@@ -41,6 +46,7 @@ def create_Directors_table(connectionObject):
     cursorObject = connectionObject.cursor()
     cursorObject.execute(sqlQuery)
     connectionObject.commit()
+    cursorObject.close()
 
 
 def create_MovieDirector_table(connectionObject):
@@ -48,6 +54,7 @@ def create_MovieDirector_table(connectionObject):
     cursorObject = connectionObject.cursor()
     cursorObject.execute(sqlQuery)
     connectionObject.commit()
+    cursorObject.close()
 
 
 def create_MovieCollection_table(connectionObject):
@@ -55,6 +62,7 @@ def create_MovieCollection_table(connectionObject):
     cursorObject = connectionObject.cursor()
     cursorObject.execute(sqlQuery)
     connectionObject.commit()
+    cursorObject.close()
 
 
 def create_Collection_table(connectionObject):
@@ -62,12 +70,12 @@ def create_Collection_table(connectionObject):
     cursorObject = connectionObject.cursor()
     cursorObject.execute(sqlQuery)
     connectionObject.commit()
+    cursorObject.close()
 
 
-connectionObject = pymysql.connect(host="127.0.0.1", user="DbMysql45", password="DbMysql45", db="DbMysql45",
-                                   port=3305)
+connectionObject = pymysql.connect(host="mysqlsrv1.cs.tau.ac.il", user="DbMysql45", password="DbMysql45", db="DbMysql45",
+                                   port=3306)
 
-create_Movies_table(connectionObject)
 create_MovieGenres_table(connectionObject)
 create_Genres_table(connectionObject)
 create_Actors_table(connectionObject)
@@ -76,4 +84,6 @@ create_Directors_table(connectionObject)
 create_MovieDirector_table(connectionObject)
 create_MovieCollection_table(connectionObject)
 create_Collection_table(connectionObject)
+create_Movies_table(connectionObject)
 
+connectionObject.close()
