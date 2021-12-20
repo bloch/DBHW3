@@ -51,7 +51,7 @@ def build_query_5(start_date , end_date):
     return query
 
 
-def build_query6(actor_name , director_name):
+def build_query_6(actor_name , director_name):
     query = "select M.title " \
                    "from Directors as D , Actors as A , MoviesActors as MA , MovieDirector as MD , Movies as M " \
                    "where " + actor_name + " = A.actorName AND A.actorID = MA.actorID AND MA.movieID = M.movieID " \
