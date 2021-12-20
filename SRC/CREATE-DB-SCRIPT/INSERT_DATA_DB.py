@@ -184,7 +184,7 @@ def insert_data_Movies_table(connectionObject):
     for movie_id, movie_data in movies_data.items():
         try:
             title = movie_data['title']
-            if(movie_data['adult']):
+            if movie_data['adult']:
                 adult = 1
             else:
                 adult = 0
@@ -201,8 +201,8 @@ def insert_data_Movies_table(connectionObject):
             print("ERROR! wasn't able to insert to MovieGenres: {}".format(e))
             continue
 
-connectionObject = pymysql.connect(host="127.0.0.1", user="DbMysql45", password="DbMysql45", db="DbMysql45",
-                                   port=3305)
+connectionObject = pymysql.connect(host='127.0.0.1', user="DbMysql45", password="DbMysql45", db="DbMysql45",
+                                   port=3306)
 
 # insert_data_Actors_table(connectionObject)
 # insert_data_Directors_table(connectionObject)
