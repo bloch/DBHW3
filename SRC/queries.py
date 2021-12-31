@@ -42,7 +42,6 @@ def build_query_4():
             "where INSTR(M.overview , %s) " \
             "order by M.popularity desc " \
             "limit 5"
-    print(query)
     return query
 
 

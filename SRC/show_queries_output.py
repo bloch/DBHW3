@@ -19,17 +19,17 @@ def show_query_1(movie_title , connectionObject):
             return
 
         print("Total number of rows in table: ", cursorObject.rowcount)
-        print("\nPrinting each Movie's title")
-
+        print("\nThe results of your query are \n")
+        i = 1
         for row in records:
-            print("Movie title = ", row[0])
+            print(str(i) + ") ", row[0])
+            i += 1
     except pymysql.connect.Error as e:
         print("Error reading data from DbMysql45 Server ...", e)
     finally:
         if connectionObject.open:
             connectionObject.close()
             cursorObject.close()
-            print("Connection to DbMysql45 server closed")
 
 
 def show_query_2(actor_name, connectionObject):
@@ -45,17 +45,17 @@ def show_query_2(actor_name, connectionObject):
             return
 
         print("Total number of rows in table: ", cursorObject.rowcount)
-        print("\nPrinting each Movie's title")
-
+        print("\nThe results of your query are \n")
+        i = 1
         for row in records:
-            print("Movie title = ", row[0])
+            print(str(i) + ") ", row[0])
+            i += 1
     except pymysql.connect.Error as e:
         print("Error reading data from DbMysql45 Server ...", e)
     finally:
         if connectionObject.open:
             connectionObject.close()
             cursorObject.close()
-            print("Connection to DbMysql45 server closed")
 
 
 def show_query_3(user_runtime, genre, connectionObject):
@@ -71,17 +71,17 @@ def show_query_3(user_runtime, genre, connectionObject):
             return
 
         print("Total number of rows in table: ", cursorObject.rowcount)
-        print("\nPrinting each Movie's title")
-
+        print("\nThe results of your query are \n")
+        i = 1
         for row in records:
-            print("Movie title = ", row[0])
+            print(str(i) + ") ", row[0])
+            i += 1
     except pymysql.connect.Error as e:
         print("Error reading data from DbMysql45 Server ...", e)
     finally:
         if connectionObject.open:
             connectionObject.close()
             cursorObject.close()
-            print("Connection to DbMysql45 server is close")
 
 def show_query_4(short_description, connectionObject):
     try:
@@ -96,17 +96,17 @@ def show_query_4(short_description, connectionObject):
             return
 
         print("Total number of rows in table: ", cursorObject.rowcount)
-        print("\nPrinting each Movie's title")
-
+        print("\nThe results of your query are \n")
+        i = 1
         for row in records:
-            print("Movie title = ", row[0])
+            print(str(i) + ") ", row[0])
+            i += 1
     except pymysql.connect.Error as e:
         print("Error reading data from DbMysql45 Server ...", e)
     finally:
         if connectionObject.open:
             connectionObject.close()
             cursorObject.close()
-            print("Connection to DbMysql45 server is close")
 
 def show_query_5(start_date , end_date, connectionObject):
     try:
@@ -121,17 +121,17 @@ def show_query_5(start_date , end_date, connectionObject):
             return
 
         print("Total number of rows in table: ", cursorObject.rowcount)
-        print("\nPrinting each Director's name")
-
+        print("\nThe results of your query are \n")
+        i = 1
         for row in records:
-            print("Director name = ", row[0])
+            print(str(i) + ") ", row[0])
+            i += 1
     except pymysql.connect.Error as e:
         print("Error reading data from DbMysql45 Server ...", e)
     finally:
         if connectionObject.open:
             connectionObject.close()
             cursorObject.close()
-            print("Connection to DbMysql45 server is close")
 
 def show_query_6(actor_name , director_name, connectionObject):
     try:
@@ -146,17 +146,17 @@ def show_query_6(actor_name , director_name, connectionObject):
             return
 
         print("Total number of rows in table: ", cursorObject.rowcount)
-        print("\nPrinting each Movie's title")
-
+        print("\nThe results of your query are \n")
+        i = 1
         for row in records:
-            print("Movie title = ", row[0])
+            print(str(i) + ") ", row[0])
+            i += 1
     except pymysql.connect.Error as e:
         print("Error reading data from DbMysql45 Server ...", e)
     finally:
         if connectionObject.open:
             connectionObject.close()
             cursorObject.close()
-            print("Connection to DbMysql45 server is close")
 
 
 def show_query_7(director_name, genre_name, start_date, end_date, connectionObject):
@@ -172,17 +172,17 @@ def show_query_7(director_name, genre_name, start_date, end_date, connectionObje
             return
 
         print("Total number of rows in table: ", cursorObject.rowcount)
-        print("\nPrinting each Movie's title")
-
+        print("\nThe results of your query are \n")
+        i = 1
         for row in records:
-            print("Movie title = ", row[0])
+            print(str(i) + ") ", row[0])
+            i += 1
     except pymysql.connect.Error as e:
         print("Error reading data from DbMysql45 Server ...", e)
     finally:
         if connectionObject.open:
             connectionObject.close()
             cursorObject.close()
-            print("Connection to DbMysql45 server is close")
 
 # connectionObject = pymysql.connect(host="mysqlsrv1.cs.tau.ac.il", user="DbMysql45", password="DbMysql45", db="DbMysql45",
 #                                    port=3306)
@@ -196,11 +196,11 @@ def show_query_7(director_name, genre_name, start_date, end_date, connectionObje
 #                                    port=3306)
 # show_query_3(100, "Comedy", connectionObject)
 #
-
+#
 # connectionObject = pymysql.connect(host="mysqlsrv1.cs.tau.ac.il", user="DbMysql45", password="DbMysql45", db="DbMysql45",
 #                                    port=3306)
 # show_query_4("Peter Parker", connectionObject)
-
+#
 # connectionObject = pymysql.connect(host="mysqlsrv1.cs.tau.ac.il", user="DbMysql45", password="DbMysql45", db="DbMysql45",
 #                                    port=3306)
 # show_query_5("2019-01-01", "2021-01-01", connectionObject)
@@ -208,7 +208,7 @@ def show_query_7(director_name, genre_name, start_date, end_date, connectionObje
 # connectionObject = pymysql.connect(host="mysqlsrv1.cs.tau.ac.il", user="DbMysql45", password="DbMysql45", db="DbMysql45",
 #                                    port=3306)
 # show_query_6("Tom Holland", "Jon Watts", connectionObject)
-
-connectionObject = pymysql.connect(host="mysqlsrv1.cs.tau.ac.il", user="DbMysql45", password="DbMysql45", db="DbMysql45",
-                                   port=3306)
-show_query_7("Quentin Tarantino", "Action", "2005-01-01", "2021-01-01", connectionObject)
+#
+# connectionObject = pymysql.connect(host="mysqlsrv1.cs.tau.ac.il", user="DbMysql45", password="DbMysql45", db="DbMysql45",
+#                                    port=3306)
+# show_query_7("Quentin Tarantino", "Action", "2005-01-01", "2021-01-01", connectionObject)
