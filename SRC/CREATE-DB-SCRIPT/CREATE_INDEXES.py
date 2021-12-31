@@ -58,11 +58,11 @@ def create_indexes_Genres_Table(connectionObject):
     except Exception as e:
         print("ERROR! wasn't able to define an index for Genres table: {}".format(e))
 
-connectionObject = pymysql.connect(host="mysqlsrv1.cs.tau.ac.il", user="DbMysql45", password="DbMysql45", db="DbMysql45",
-                                   port=3306)
+# connectionObject = pymysql.connect(host="mysqlsrv1.cs.tau.ac.il", user="DbMysql45", password="DbMysql45", db="DbMysql45",
+#                                    port=3306)
 
 # create_indexes_Movies_Table(connectionObject)
 # create_indexes_Actors_Table(connectionObject)
 # create_indexes_Directors_Table(connectionObject)
 # create_indexes_Genres_Table(connectionObject)
-connectionObject.close()
+# connectionObject.close()

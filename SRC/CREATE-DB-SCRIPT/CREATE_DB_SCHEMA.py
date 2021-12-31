@@ -73,17 +73,17 @@ def create_Collection_table(connectionObject):
     cursorObject.close()
 
 
-connectionObject = pymysql.connect(host="mysqlsrv1.cs.tau.ac.il", user="DbMysql45", password="DbMysql45", db="DbMysql45",
-                                   port=3306)
-
-create_MovieGenres_table(connectionObject)
-create_Genres_table(connectionObject)
-create_Actors_table(connectionObject)
-create_MoviesActors_table(connectionObject)
-create_Directors_table(connectionObject)
-create_MovieDirector_table(connectionObject)
-create_MovieCollection_table(connectionObject)
-create_Collection_table(connectionObject)
-create_Movies_table(connectionObject)
-
-connectionObject.close()
+# connectionObject = pymysql.connect(host="mysqlsrv1.cs.tau.ac.il", user="DbMysql45", password="DbMysql45", db="DbMysql45",
+#                                    port=3306)
+#
+# create_MovieGenres_table(connectionObject)
+# create_Genres_table(connectionObject)
+# create_Actors_table(connectionObject)
+# create_MoviesActors_table(connectionObject)
+# create_Directors_table(connectionObject)
+# create_MovieDirector_table(connectionObject)
+# create_MovieCollection_table(connectionObject)
+# create_Collection_table(connectionObject)
+# create_Movies_table(connectionObject)
+#
+# connectionObject.close()

@@ -209,15 +209,15 @@ def insert_data_Movies_table(connectionObject):
             continue
 
 
-connectionObject = pymysql.connect(host="mysqlsrv1.cs.tau.ac.il", user="DbMysql45", password="DbMysql45", db="DbMysql45",
-                                   port=3306)
-
-insert_data_Movies_table(connectionObject)
-insert_data_Actors_table(connectionObject)
-insert_data_Directors_table(connectionObject)
-insert_data_Genres_table(connectionObject)
-insert_data_Collection_table(connectionObject)
-insert_data_MovieCollection_table(connectionObject)
-insert_data_MoviesActors_table(connectionObject)
-insert_data_MoviesDirectors_table(connectionObject)
-insert_data_MovieGenres_table(connectionObject)
+# connectionObject = pymysql.connect(host="mysqlsrv1.cs.tau.ac.il", user="DbMysql45", password="DbMysql45", db="DbMysql45",
+#                                    port=3306)
+#
+# insert_data_Movies_table(connectionObject)
+# insert_data_Actors_table(connectionObject)
+# insert_data_Directors_table(connectionObject)
+# insert_data_Genres_table(connectionObject)
+# insert_data_Collection_table(connectionObject)
+# insert_data_MovieCollection_table(connectionObject)
+# insert_data_MoviesActors_table(connectionObject)
+# insert_data_MoviesDirectors_table(connectionObject)
+# insert_data_MovieGenres_table(connectionObject)

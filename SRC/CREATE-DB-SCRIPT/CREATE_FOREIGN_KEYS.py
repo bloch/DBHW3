@@ -88,16 +88,16 @@ def create_foreign_keys_Movies_Table(connectionObject):
 
 
 
-connectionObject = pymysql.connect(host="mysqlsrv1.cs.tau.ac.il", user="DbMysql45", password="DbMysql45", db="DbMysql45",
-                                   port=3306)
-
-
-create_foreign_keys_Actors_Table(connectionObject)
-create_foreign_keys_Directors_Table(connectionObject)
-create_foreign_keys_Genres_Table(connectionObject)
-create_foreign_keys_Collection_Table(connectionObject)
-create_foreign_keys_MovieCollection_Table(connectionObject)
-create_foreign_keys_MoviesActors_Table(connectionObject)
-create_foreign_keys_MovieDirector_Table(connectionObject)
-create_foreign_keys_MovieGenres_Table(connectionObject)
-create_foreign_keys_Movies_Table(connectionObject)
+# connectionObject = pymysql.connect(host="mysqlsrv1.cs.tau.ac.il", user="DbMysql45", password="DbMysql45", db="DbMysql45",
+#                                    port=3306)
+#
+#
+# create_foreign_keys_Actors_Table(connectionObject)
+# create_foreign_keys_Directors_Table(connectionObject)
+# create_foreign_keys_Genres_Table(connectionObject)
+# create_foreign_keys_Collection_Table(connectionObject)
+# create_foreign_keys_MovieCollection_Table(connectionObject)
+# create_foreign_keys_MoviesActors_Table(connectionObject)
+# create_foreign_keys_MovieDirector_Table(connectionObject)
+# create_foreign_keys_MovieGenres_Table(connectionObject)
+# create_foreign_keys_Movies_Table(connectionObject)
